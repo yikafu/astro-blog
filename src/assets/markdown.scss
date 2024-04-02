@@ -1,0 +1,72 @@
+body {
+  --light-color: #326ca3;
+  --border-color: #626363;
+}
+
+.dark body{
+  --light-color: #39c5bb;
+  --border-color: #cfd4d4;
+}
+
+// 段落内的a标签样式
+p {
+  a {
+    font-weight: bold;
+    border-bottom: 1.2px solid var(--light-color);
+    transition: all 0.3s;
+  }
+}
+// 代码块样式
+pre {
+  padding: 15px;
+  flex-grow: 1;
+  overflow: auto;
+  background-color: var(--code-bg-color);
+  border-radius: 5px;
+  code {
+    line-height: 1.5;
+  }
+}
+// 表格样式
+table {
+  display: block;
+  border-collapse: collapse;
+  margin: 20px 0;
+  overflow-x: auto;
+  th,
+  td {
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    text-align: center;
+  }
+}
+
+// 引用样式
+blockquote {
+  border-left: 5px solid var(--light-color);
+  padding-left: 10px;
+  margin: 0;
+  font-style: italic;
+}
+
+li::marker {
+  color: var(--light-color);
+}
+
+del {
+  background-color: #040404;
+  color: #040404;
+  text-decoration: none;
+  &:hover {
+    color: #f4f4f4;
+  }
+}
+
+strong,
+b,
+del,
+em,
+i {
+  margin: 0 2px;
+}

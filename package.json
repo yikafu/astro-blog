@@ -1,0 +1,24 @@
+{
+  "name": "galactic-gravity",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.9",
+    "@iconify-json/mdi": "^1.1.64",
+    "astro": "^4.5.8",
+    "astro-icon": "^1.1.0",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@iconify-icons/material-symbols": "^1.2.58",
+    "@unocss/reset": "^0.59.0-beta.1",
+    "unocss": "^0.59.0-beta.1"
+  }
+}

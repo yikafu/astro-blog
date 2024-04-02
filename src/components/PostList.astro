@@ -1,0 +1,65 @@
+---
+const { allposts } = Astro.props;
+---
+
+<div class="article-list">
+  {
+    allposts.map((post:any) => (
+      <a href={`/posts/${post.slug}`}>
+        <div class="card">
+          <h3>{post.data.title}</h3>
+          <div class="meta">
+            <span>{`创建于：${post.data.date}`}</span>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>
+
+<style is:global>
+  main {
+    padding: 0 !important;
+    background-color: var(--bg-color) !important;
+  }
+</style>
+
+<style lang="scss">
+  .card {
+    height: 5rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: var(--card-bg);
+    transition: box-shadow 0.3s;
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .meta {
+      margin-top: 0.9rem;
+      font-size: 0.8rem;
+      color: var(--font-secondary);
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .nav-box {
+    margin-top: 20px;
+    height: 2rem;
+    .clicktoPre {
+      float: left;
+    }
+    .clicktoNext {
+      float: right;
+    }
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection, getEntries } from "astro:content";
+const getPosts = await getCollection("posts");
+const list = getPosts.reduce((acc:any, post) => {
+  const year = new Date(post.data.date).getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {});
+// 对每个年份的文章按照日期排序
+const tree = Object.entries(list)
+  .map(([year, posts]) => {
+    return [
+      year,
+      posts.sort((a:any, b:any) => new Date(b.data.date) - new Date(a.data.date)),
+    ];
+  })
+  .reverse();
+---
+
+<BaseLayout>
+  {
+    tree.map(([year, posts]) => (
+      <div class="time-tree">
+        <div class="item-head">
+          <h3>{year}</h3>
+          <span>共 {posts.length} 篇文章</span>
+        </div>
+
+        {posts.map((post) => (
+          <div class="item-meta">
+            <span>{post.data.date.slice(5)}</span>
+            <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</BaseLayout>
+
+<style>
+  .time-tree {
+    margin-bottom: 1rem;
+  }
+  .item-head {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .item-meta {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .item-meta span {
+    width: 4rem;
+    margin-right: 0.5rem;
+  }
+  .item-meta a {
+    text-decoration: none;
+  }
+  .item-meta a:hover {
+    text-decoration: underline;
+    transition: all 0.3s;
+  }
+</style>

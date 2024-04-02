@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: "Atkinson", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background-size: 100% 600px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s;
+}
+.allbox {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1150px;
+}
+.container {
+  display: flex;
+  gap: 1.5rem;
+}
+main {
+  max-width: 870px;
+  flex: 1;
+  border-radius: 15px;
+  background-color: var(--card-bg);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #666;
+}
+a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 18px;
+}
+:root {
+  --font-color: #393939;
+  --font-secondary: #626363;
+  --bg-color: #dae1e7;
+  --card-bg: #fff;
+  --black: #000;
+  --d6-blue: #d6e2ed;
+  --primary: #39c5bb;
+  --blue: #326ca3;
+}
+.dark {
+  --font-color: #d2d2d2;
+  --font-secondary: #d2d2d2;
+  --bg-color: #282c34;
+  --card-bg: #354e6b;
+}

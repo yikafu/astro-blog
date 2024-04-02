@@ -1,0 +1,34 @@
+---
+// Component Imports
+import AppFooter from "@components/AppFooter.astro";
+import AppHeader from "@components/AppHeader.astro";
+import AppAside from "@components/AppAside.astro";
+import { ViewTransitions } from "astro:transitions";
+
+// 导入styles
+import "@assets/base.scss";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/pagefind/pagefind-ui.js" is:inline></script>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="allbox">
+      <AppHeader />
+      <div class="container">
+        <AppAside/>
+        <main>
+          <slot />
+        </main>
+      </div>
+      <AppFooter />
+    </div>
+  </body>
+</html>

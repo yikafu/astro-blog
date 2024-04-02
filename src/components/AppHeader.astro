@@ -1,0 +1,63 @@
+---
+import AppTheme from "./AppTheme.astro";
+import AppSearch from "./AppSearch.astro";
+import { navConfig, siteConfig } from "@/config.ts";
+---
+
+<header>
+  <div class="nav">
+    <div class="nav-index">
+      <a href="/">
+        <span>{siteConfig.title}</span>
+      </a>
+    </div>
+    <div class="container">
+      {
+        navConfig.map((item) => (
+          <a href={item.url}>
+            <span>{item.name}</span>
+          </a>
+        ))
+      }
+    </div>
+    <div class="nav-tools">
+      <AppSearch />
+      <AppTheme />
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  @mixin base-flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    @include base-flex;
+    height: 5rem;
+    padding: 0 1rem;
+    background-color: var(--card-bg);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .nav-index,
+  .nav-tools {
+    @include base-flex;
+  }
+  .container {
+    @include base-flex;
+    justify-content: center;
+    flex: auto;
+  }
+  a {
+    @include base-flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+  }
+</style>

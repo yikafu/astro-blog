@@ -1,0 +1,47 @@
+---
+import "@assets/markdown.scss";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+const { title, tags, date } = frontmatter;
+---
+
+<BaseLayout>
+  <div class="post-container">
+    <h1>{title}</h1>
+    <div class="meta">
+      <span class="date-span">Written by {date}</span>
+      <div class="tags-div">
+        <span class="tag-span">tags:</span>
+        {
+          tags ? (
+            tags.map((tag: string) => <span class="tag-span">{"#" + tag}</span>)
+          ) : (
+            <span class="tag-span">------</span>
+          )
+        }
+      </div>
+    </div>
+    <slot />
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .post-container {
+    padding: 1.5rem 2rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .meta {
+    margin-bottom: 3rem;
+    .tags-div {
+      display: flex;
+      .tag-span {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+</style>
