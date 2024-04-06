@@ -25,32 +25,6 @@ html {
   background-color: var(--bg-color);
   scroll-behavior: smooth;
 }
-body {
-  margin: 0;
-  padding: 0;
-  transition: all 0.5s;
-}
-.allbox {
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  margin: auto;
-  max-width: 1150px;
-}
-.container {
-  display: flex;
-  gap: 1.5rem;
-}
-main {
-  max-width: 870px;
-  flex: 1;
-  border-radius: 15px;
-  background-color: var(--card-bg);
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -79,19 +53,17 @@ h3 {
 h4 {
   font-size: 18px;
 }
+input {
+  box-sizing: border-box;
+}
+input:focus {
+  outline: none;
+}
 :root {
   --font-color: #393939;
-  --font-secondary: #626363;
   --bg-color: #dae1e7;
-  --card-bg: #fff;
-  --black: #000;
-  --d6-blue: #d6e2ed;
-  --primary: #39c5bb;
-  --blue: #326ca3;
 }
 .dark {
   --font-color: #d2d2d2;
-  --font-secondary: #d2d2d2;
   --bg-color: #282c34;
-  --card-bg: #354e6b;
 }

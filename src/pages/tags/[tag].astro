@@ -24,13 +24,13 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout>
-  <div class="tags-list">
+  <div class="rules-ly">
     <p>包含「{tag}」标签的文章</p>
     {
       posts.map((post) => (
-        <ul>
-          <li>
-            <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+        <ul px my>
+          <li class="list-initial" >
+            <a hover="decoration-underline" href={`/posts/${post.slug}/`}>{post.data.title}</a>
           </li>
         </ul>
       ))

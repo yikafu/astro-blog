@@ -1,0 +1,58 @@
+/* 段落内的a标签样式 */
+p > a {
+  --at-apply: "hover:text-primary font-bold b-b-1.2px b-solid b-primary transition='all 0.3s'";
+}
+
+pre {
+  --at-apply: "py-3 px-15px grow-1 overflow-auto b-r-5px";
+}
+p > code {
+  --at-apply: "p-1 bg-second b-r-5px";
+}
+/* 表格样式 */
+table {
+  --at-apply: "block w-full border-collapse my-5 mx-0 overflow-x-auto";
+}
+
+th,
+td {
+  --at-apply: "b-1 b-solid b-#666 py-2 px-4 text-center text-4";
+}
+
+/* 引用样式 */
+blockquote {
+  --at-apply: "b-l-5px b-solid b-primary pl-10px m-0 italic";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --at-apply: "fw-700 my-20px mx-0";
+}
+ol {
+  --at-apply:"p-0 p-r-20px m-0 list-none"
+}
+ul {
+  --at-apply:"p-0 p-r-20px m-0 list-none"
+}
+li {
+  --at-apply: "my-5px m-l-5 list-initial";
+}
+li::marker {
+  --at-apply: "text-primary";
+}
+
+del {
+  --at-apply: "bg-#040404 color-#040404 decoration-none hover:color-#f4f4f4";
+}
+
+strong,
+b,
+del,
+em,
+i {
+  margin: 0 2px;
+}

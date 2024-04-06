@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCollection, getEntries } from "astro:content";
+import { getCollection } from "astro:content";
 const getPosts = await getCollection("posts");
-const list = getPosts.reduce((acc:any, post) => {
+const list = getPosts.reduce((acc: any, post) => {
   const year = new Date(post.data.date).getFullYear();
   if (!acc[year]) {
     acc[year] = [];
@@ -15,60 +15,33 @@ const tree = Object.entries(list)
   .map(([year, posts]) => {
     return [
       year,
-      posts.sort((a:any, b:any) => new Date(b.data.date) - new Date(a.data.date)),
+      // @ts-ignore
+      posts.sort(
+        // @ts-ignore
+        (a: any, b: any) => new Date(b.data.date) - new Date(a.data.date)
+      ),
     ];
   })
   .reverse();
 ---
 
 <BaseLayout>
-  {
-    tree.map(([year, posts]) => (
-      <div class="time-tree">
-        <div class="item-head">
-          <h3>{year}</h3>
-          <span>共 {posts.length} 篇文章</span>
-        </div>
-
-        {posts.map((post) => (
-          <div class="item-meta">
-            <span>{post.data.date.slice(5)}</span>
-            <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+  <div class="rules-ly" flex="~ col gap-6">
+    {
+      tree.map(([year, posts]) => (
+        <div class="mb-4">
+          <div class="mb-2 text-0.9rem" flex="~ items-center gap-4">
+            <h3>{year}</h3>
+            <span>共 {posts.length} 篇文章</span>
           </div>
-        ))}
-      </div>
-    ))
-  }
+          {posts.map((post) => (
+            <div class="mb-2 ml-4" flex="~ items-center gap-4">
+              <span w-16 mr-2>{post.data.date.slice(5)}</span>
+              <a rules-ts hover="decoration-underline" href={`/posts/${post.slug}/`}>{post.data.title}</a>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
 </BaseLayout>
-
-<style>
-  .time-tree {
-    margin-bottom: 1rem;
-  }
-  .item-head {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .item-meta {
-    margin-bottom: 0.5rem;
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .item-meta span {
-    width: 4rem;
-    margin-right: 0.5rem;
-  }
-  .item-meta a {
-    text-decoration: none;
-  }
-  .item-meta a:hover {
-    text-decoration: underline;
-    transition: all 0.3s;
-  }
-</style>

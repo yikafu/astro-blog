@@ -6,7 +6,7 @@ import AppAside from "@components/AppAside.astro";
 import { ViewTransitions } from "astro:transitions";
 
 // 导入styles
-import "@assets/base.scss";
+import "@assets/base.css";
 ---
 
 <html lang="en">
@@ -20,11 +20,13 @@ import "@assets/base.scss";
     <ViewTransitions />
   </head>
   <body>
-    <div class="allbox">
+    <div class="gap-4 ma max-w-1150px" flex="~ col">
       <AppHeader />
-      <div class="container">
-        <AppAside/>
-        <main>
+      <div class="flex gap-6">
+        <aside>
+          <AppAside />
+        </aside>
+        <main class="b-rd-4" flex="~ 1 col justify-between">
           <slot />
         </main>
       </div>

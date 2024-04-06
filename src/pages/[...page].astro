@@ -17,15 +17,15 @@ const { page }: { page: any } = Astro.props;
 
 <BaseLayout>
   <PostList allposts={page.data} />
-  <nav>
+  <nav class="w-100% rules-flex gap-4">
     {
       (
         <>
-          <a id="prePage" href={page.url.prev}>
+          <a class="custom-class custom-h" id="prePage" href={page.url.prev}>
             <Icon name="mdi:menu-left" size={40} />
           </a>
-          <span>{page.currentPage}</span>
-          <a id="nexPage" href={page.url.next}>
+          <span class="custom-class">{page.currentPage}</span>
+          <a class="custom-class custom-h" id="nexPage" href={page.url.next}>
             <Icon name="mdi:menu-right" size={40} />
           </a>
         </>
@@ -34,31 +34,11 @@ const { page }: { page: any } = Astro.props;
   </nav>
 </BaseLayout>
 
-<style lang="scss">
-  nav {
-    width: 100%;
-    height: 2.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-
-    a,
-    span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 3rem;
-      height: 3rem;
-      background-color: var(--card-bg);
-      color: var(--blue);
-      font-size: 1.2rem;
-      border-radius: 1rem;
-      transition: all 0.3s;
-    }
-
-    a:hover {
-      background-color: var(--blue);
-      color: var(--card-bg);
-    }
+<style>
+  .custom-class {
+    --at-apply: "rules-flex w-12 h-12 bg-card dark:bg-dark-card color-primary dark:color-second text-5 border-rd-4 transition-all-0.3s";
+  }
+  .custom-h{
+    --at-apply: "hover:bg-primary hover:color-card"
   }
 </style>

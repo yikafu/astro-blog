@@ -18,7 +18,10 @@
   },
   "devDependencies": {
     "@iconify-icons/material-symbols": "^1.2.58",
+    "@unocss/preset-attributify": "^0.59.0-beta.1",
     "@unocss/reset": "^0.59.0-beta.1",
+    "@unocss/transformer-compile-class": "^0.59.0-beta.1",
+    "@unocss/transformer-directives": "^0.59.0-beta.1",
     "unocss": "^0.59.0-beta.1"
   }
 }

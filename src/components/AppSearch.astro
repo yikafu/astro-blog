@@ -2,45 +2,22 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="search">
-  <input type="text" name="q" placeholder="Search..." value="" />
-  <button type="submit"><Icon name="mdi:search" size={20}/></button>
+<div class="rules-flex h-8 b-rd-4">
+  <input
+    class="h-100% w-220px text-0.9rem p-x b-r-0 bg-#f4f4f4"
+    text="#111"
+    border="~ r-0 #666 rd-tl-4 rd-bl-4"
+    type="text"
+    name="q"
+    placeholder="Search..."
+    value=""
+  />
+  <button
+    class="rules-flex h-100% w-10 bg-#f4f4f4"
+    text="#111"
+    border="~ l-0 #666 rd-tr-4 rd-br-4"
+    type="submit"
+  >
+    <Icon name="mdi:search" size={20} />
+  </button>
 </div>
-
-<style lang="scss">
-  .search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-    border-radius: 1rem;
-  }
-  input {
-    height: 100%;
-    width: 220px;
-    font-size: 16px;
-    padding: 0 1rem;
-    background-color: #f4f4f4;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border: 1px solid var(--border-color);
-    border-right: none;
-    box-sizing: border-box;
-    &:focus {
-      outline: none;
-    }
-  }
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 2.5rem;
-    background-color: #f4f4f4;
-    border: 1px solid var(--border-color);
-    border-left: none;
-    cursor: pointer;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-</style>
