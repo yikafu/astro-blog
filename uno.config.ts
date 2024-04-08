@@ -22,15 +22,9 @@ export default defineConfig({
       },
     ],
     ["rules-ts", { transition: "all 0.3s ease" }],
-    ["rules-ly", { "--at-apply": "h-100% p-8 b-rd-4 bg-card dark-bg-dark-card" }],
-    ["rules-card", { "--at-apply": " bg-card dark:bg-dark-card" }],
-    ["rules-bg", { "--at-apply": " bg-bgcolor dark:bg-dark-bgcolor" }],
     [
-      "rules-hover",
-      {
-        "--at-apply":
-          " bg-second text-primary hover:bg-primary hover:text-second",
-      },
+      "rules-ly",
+      { "--at-apply": "h-100% p-8 b-rd-4 bg-card dark:bg-dark-card" },
     ],
   ],
   theme: {
@@ -41,6 +35,9 @@ export default defineConfig({
       second: "#d6e2ed",
       "dark-bgcolor": "#282c34",
       "dark-card": "#354e6b",
+    },
+    breakpoints: {
+
     },
   },
 });
