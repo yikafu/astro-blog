@@ -68,14 +68,3 @@ input:focus {
   --font-color: #d2d2d2;
   --bg-color: #282c34;
 }
-
-
-.rules-card {
-  --at-apply: "bg-card dark:bg-dark-card";
-}
-.rules-bg {
-  --at-apply: "bg-bgcolor dark:bg-dark-bgcolor";
-}
-.rules-hover {
-  --at-apply: " bg-second text-primary hover:bg-primary hover:text-second";
-}

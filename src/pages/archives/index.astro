@@ -32,7 +32,7 @@ const tree = Object.entries(list)
 ---
 
 <BaseLayout>
-  <div class="rules-ly" flex="~ col gap-6">
+  <div class="sc-ly" flex="~ col gap-6">
     {
       tree.map(([year, posts]) => (
         <div class="mb-4">
@@ -46,7 +46,7 @@ const tree = Object.entries(list)
                 {post.data.date.slice(5)}
               </span>
               <a
-                rules-ts
+                sc-ts
                 hover="decoration-underline"
                 href={`/posts/${post.slug}/`}
               >

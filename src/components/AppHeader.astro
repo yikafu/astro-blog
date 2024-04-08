@@ -5,17 +5,17 @@ import { navConfig, siteConfig } from "@/config.ts";
 ---
 
 <header>
-  <div class="rules-flex rules-card h-20 px-1 py-0 b-rd-b-4">
-    <div class="rules-flex p-x text-5 fw-bold">
+  <div class="sc-flex sc-card h-20 px-1 py-0 b-rd-b-4">
+    <div class="sc-flex p-x text-5 fw-bold">
       <a href="/">
         <span>{siteConfig.title}</span>
       </a>
     </div>
-    <div class="rules-flex flex-auto">
+    <div class="sc-flex flex-auto">
       {
         navConfig.map((item) => (
           <a
-            class="rules-flex rules-ts fw-bold gap-2 py-2 px-4"
+            class="sc-flex sc-ts fw-bold gap-2 py-2 px-4"
             un-text="5 decoration-none"
             href={item.url}
           >
@@ -24,7 +24,7 @@ import { navConfig, siteConfig } from "@/config.ts";
         ))
       }
     </div>
-    <div class="rules-flex">
+    <div class="sc-flex">
       <AppSearch />
       <AppTheme />
     </div>

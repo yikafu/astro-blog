@@ -17,7 +17,7 @@ const { page }: { page: any } = Astro.props;
 
 <BaseLayout>
   <PostList allposts={page.data} />
-  <nav class="w-100% rules-flex gap-4">
+  <nav class="w-100% sc-flex gap-4">
     {
       (
         <>
@@ -36,7 +36,7 @@ const { page }: { page: any } = Astro.props;
 
 <style>
   .custom-class {
-    --at-apply: "rules-flex w-12 h-12 bg-card dark:bg-dark-card color-primary dark:color-second text-5 border-rd-4 transition-all-0.3s";
+    --at-apply: "sc-flex sc-card  w-12 h-12 color-primary dark:color-second text-5 border-rd-4 transition-all-0.3s";
   }
   .custom-h{
     --at-apply: "hover:bg-primary hover:color-card"
