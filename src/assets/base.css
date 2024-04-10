@@ -24,6 +24,7 @@ html {
   color: var(--font-color);
   background-color: var(--bg-color);
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
