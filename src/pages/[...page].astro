@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import { Icon } from "astro-icon/components";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import PostList from "@/components/PostList.astro";
+import PostList from "@components/PostList.vue";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const getPosts = await getCollection("posts");
@@ -16,22 +15,24 @@ const { page }: { page: any } = Astro.props;
 ---
 
 <BaseLayout>
+<div class="h-full relative ">
   <PostList allposts={page.data} />
-  <nav class="w-100% sc-flex gap-4">
+  <nav class="w-100% sc-flex gap-4 absolute bottom-0">
     {
       (
         <>
           <a class="custom-class custom-h" id="prePage" href={page.url.prev}>
-            <Icon name="mdi:menu-left" size={40} />
+            <div class="i-tabler-chevron-left" />
           </a>
           <span class="custom-class">{page.currentPage}</span>
           <a class="custom-class custom-h" id="nexPage" href={page.url.next}>
-            <Icon name="mdi:menu-right" size={40} />
+            <div class="i-tabler-chevron-right" />
           </a>
         </>
       )
     }
   </nav>
+</div>
 </BaseLayout>
 
 <style>

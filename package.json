@@ -11,17 +11,21 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.9",
-    "@iconify-json/mdi": "^1.1.64",
+    "@astrojs/vue": "^4.2.0",
     "astro": "^4.5.8",
-    "astro-icon": "^1.1.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "vue": "^3.4.27"
   },
-  "devDependencies": {
-    "@iconify-icons/material-symbols": "^1.2.58",
+  "@iconify-icons/material-symbols": {
     "@unocss/preset-attributify": "^0.59.0-beta.1",
     "@unocss/reset": "^0.59.0-beta.1",
     "@unocss/transformer-compile-class": "^0.59.0-beta.1",
     "@unocss/transformer-directives": "^0.59.0-beta.1",
     "unocss": "^0.59.0-beta.1"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.1.110",
+    "@unocss/preset-icons": "^0.59.4",
+    "unocss": "^0.59.4"
   }
 }

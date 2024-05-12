@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())].filter(
+  (tag) => tag
+);
+---
+
+<BaseLayout>
+  <div class="sc-ly" flex="~ col gap-6">
+    <h2 class="sc-title">标签</h2>
+      <div class="tags" flex="~ wrap justify-center">
+        {
+          tags.map((tag) => (
+            <a m-5px href={`/tags/${tag}`}>
+              <span class="sc-hover border-rd-1 p-y-5px p-x-10px sc-ts">
+                {tag}
+              </span>
+            </a>
+          ))
+        }
+      </div>
+  </div>
+</BaseLayout>

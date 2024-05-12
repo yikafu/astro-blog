@@ -1,8 +1,8 @@
 ---
 // Component Imports
-import AppFooter from "@components/AppFooter.astro";
-import AppHeader from "@components/AppHeader.astro";
-import AppAside from "@components/AppAside.astro";
+import AppHeader from "@components/AppHeader.vue";
+import AppAside from "@components/AppAside.vue";
+import AppFloat from "@components/AppFloat.vue";
 import { ViewTransitions } from "astro:transitions";
 
 // 导入styles
@@ -15,22 +15,66 @@ import "@assets/base.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-    <script src="/pagefind/pagefind-ui.js" is:inline></script>
+    <script src="@/assets/setThemeChange.js"></script>
     <ViewTransitions />
   </head>
   <body>
-    <div class="gap-4 ma max-w-1150px" flex="~ col">
-      <AppHeader />
-      <div class="flex gap-6">
-        <aside>
-          <AppAside />
-        </aside>
-        <main class="b-rd-4" flex="~ 1 col justify-between">
-          <slot />
-        </main>
+    <div class="gap-4 ma max-w-1200px" flex="~ col">
+      <div class="blog-header">
+        <AppHeader />
       </div>
-      <AppFooter />
+      <div class="flex gap-6 p-6 min-h-690px">
+        <div class="blog-aside">
+          <AppAside />
+        </div>
+        <div class="blog-content">
+          <main class="b-rd-4 m-b-6 h-full" flex="~ 1 col justify-between">
+            <slot />
+          </main>
+        </div>
+      </div>
+      <div class="blog-float">
+        <AppFloat client:load />
+      </div>
     </div>
-  </body>
+  </body><style is:inline>
+    .blog-header {
+      display: none;
+    }
+    .blog-aside {
+      position: sticky;
+      min-width: 280px;
+      height: 100%;
+      top: 1.5rem;
+      overflow-y: auto;
+      border-radius: 1rem;
+      z-index: 50;
+    }
+    .blog-content {
+      flex: auto;
+    }
+    .blog-float {
+      width: calc(24px + 2rem);
+      height: calc(24px + 2rem);
+      position: fixed;
+      display: block;
+      float: right;
+      bottom: 2rem;
+      right: .8rem;
+      z-index: 99;
+    }
+    /* 最大宽度小于968px */
+    @media (max-width: 968px) {
+      .blog-aside {
+        display: none;
+        transition: all 0.3s;
+      }
+      .blog-header {
+        display: block;
+      }
+      .blog-float {
+        display: none;
+      }
+    }
+  </style>
 </html>

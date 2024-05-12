@@ -1,17 +1,10 @@
 import { defineConfig } from "astro/config";
-import icon from "astro-icon";
-import UnoCSS from 'unocss/astro'
+import UnoCSS from 'unocss/astro';
+import vue from "@astrojs/vue";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    UnoCSS({
-      injectReset: true
-    }),
-    icon({
-      include: {
-        mdi: ["*"],
-        'material-symbols': ["*"],
-      },
-    }),
-  ],
+  integrations: [UnoCSS({
+    injectReset: true
+  }), vue()]
 });
