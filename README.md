@@ -10,16 +10,16 @@ A static、lightweight blog template developed based on Astro
 
 ## 👋 Preview
 ### Index
-![bloglight](public\\blogLight.png)
+![bloglight](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogLight.png)
 
 ### Tags
-![blogTags](public\\blogTags.png)
+![blogTags](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogTags.png)
 
 ### Archive
-![blogAs](public\\blogAs.png)
+![blogAs](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogAs.png)
 
 ### Dark mode
-![blogdark](public\\blogDark.png)
+![blogdark](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogDark.png)
 
 ## 🖥 Commands
 
