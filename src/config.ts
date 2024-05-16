@@ -1,4 +1,5 @@
 // @unocss-include
+// 配置文件
 import type { SiteConfig, NavConfig, ProfileConfig } from "./types/config";
 export const siteConfig: SiteConfig = {
   title: "Blog",
