@@ -20,7 +20,7 @@ import { navConfig } from "@/config.ts";
       </a>
 
       <div class="sc-flex gap-3 m-6">
-        <template v-for="item in profileConfig.links">
+        <template v-for="item in profileConfig.links" :key="item.url">
           <a
             class="sc-flex sc-hover w-14 h-14 b-rd-50%"
             transition="all duration-0.3s"
@@ -34,7 +34,7 @@ import { navConfig } from "@/config.ts";
 
       <!-- navComfig 竖直列表  -->
       <ul class="flex flex-col gap-5 p-0 my-12">
-        <template v-for="item in navConfig">
+        <template v-for="item in navConfig" :key="item.name">
           <li
             class="ma fw-bold text-6 w-70% lh-12 text-center list-none"
             hover="bg-bgcolor dark:bg-dark-bgcolor b-rd-2"
