@@ -10,16 +10,16 @@ A static、lightweight blog template developed based on Astro
 
 ## 👋 Preview
 ### Index
-![bloglight](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogLight.png)
+![bloglight](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/preview/blogLight.png)
 
 ### Tags
-![blogTags](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogTags.png)
+![blogTags](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/preview/blogTags.png)
 
 ### Archive
-![blogAs](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogAs.png)
+![blogAs](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/preview/blogAs.png)
 
 ### Dark mode
-![blogdark](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/public/blogDark.png)
+![blogdark](https://raw.githubusercontent.com/yikafu/astro-blog/v2_vue/preview/blogDark.png)
 
 ## 🖥 Commands
 
@@ -50,3 +50,7 @@ heroImage：string,
 ---
 
 ```
+
+## Other
+- Add the "CNAME" file to change the Github-Page domain.
+- Add the ".nojekyll" file to tell github not allowed to be used jekyll.
