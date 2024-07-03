@@ -4,7 +4,6 @@ import AppHeader from "@components/AppHeader.vue";
 import AppAside from "@components/AppAside.vue";
 import AppFloat from "@components/AppFloat.vue";
 import { ViewTransitions } from "astro:transitions";
-
 // 导入styles
 import "@assets/base.css";
 ---
@@ -78,3 +77,15 @@ import "@assets/base.css";
     }
   </style>
 </html>
+
+<script is:inline>
+  function setDarkMode(document) {
+    let theme = localStorage.darkMode ? 'dark' : 'light';
+    document.documentElement.dataset.theme = theme;
+  }
+  setDarkMode(document);
+  document.addEventListener('astro:before-swap', ev => {
+    setDarkMode(ev.newDocument);
+  });
+
+</script>
